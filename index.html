@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>Röth Datensysteme Wuppertal GmbH – IT-Systemhaus & Digitalisierung</title>
+<meta name="description" content="IT-Lösungen, Systemintegration, Cloud, Netzwerk und IT-Support für Unternehmen aus Wuppertal und NRW. Seit 1981 zuverlässiger IT-Partner.">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="IT, Systemhaus, Wuppertal, IT-Support, Netzwerk, Digitalisierung, Cloud, IT-Beratung">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Röth Datensysteme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero h1, .hero p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideIn 1s forwards;
+    }
+    .hero h1 {
+      animation-delay: 0.2s;
+    }
+    .hero p {
+      animation-delay: 0.6s;
+    }
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logoroth.png" alt="Röth Logo">
+      <strong>Röth Datensysteme</strong>
+    </div>
+<nav class="main-nav">
+  <a href="#leistungen" class="nav-link">Leistungen</a>
+  <a href="#unternehmen" class="nav-link">Über uns</a>
+  <a href="#kontakt" class="nav-link">Kontakt</a>
+  <a href="#karriere" class="nav-link">Karriere</a>
+  <a href="#partner" class="nav-link">Partner</a>
+  <a href="#support" class="nav-link">Support</a>
+</nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1>Digitale Systeme für moderne Unternehmen</h1>
+    <p>Verlässliche IT-Lösungen & individuelle Dienstleistungen aus Wuppertal</p>
+  </section>
+
+<main>
+  <!-- Leistungen -->
+  <section class="screen-section" id="leistungen">
+    <div class="big-card">
+      <h2>Unsere Leistungen</h2>
+      <p>Wir bieten Vertrieb und Implementierung hochmoderner Datensysteme, Netzwerkmanagement, Cloud-Lösungen sowie individuelle IT-Beratung und Support für Unternehmen jeder Größe.</p>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section class="screen-section" id="unternehmen">
+    <div class="big-card">
+      <h2>Über uns</h2>
+		<p>
+			Gegründet im Jahr 1981, zählt Röth Datensysteme Wuppertal GmbH zu den erfahrensten IT-Dienstleistern in der Region. Unter der Leitung von Ralf Otto Röth bieten wir maßgeschneiderte Lösungen rund um moderne Datensysteme, IT-Infrastruktur und Digitalisierung. Unser Team aus 15 engagierten Fachkräften setzt auf persönliche Beratung, Zuverlässigkeit und technische Exzellenz.<br><br>
+			Wir betreuen Unternehmen aus Mittelstand, Industrie und öffentlichem Bereich – vom ersten Beratungsgespräch bis zur erfolgreichen Umsetzung und laufendem Support. Durch kontinuierliche Weiterbildung und Innovationsfreude sichern wir die Zukunftsfähigkeit unserer Kunden im digitalen Wandel.
+		</p>
+    </div>
+  </section>
+
+<section class="screen-section" id="kontakt">
+  <div class="big-card">
+    <h2>Kontakt</h2>
+<form class="contact-form" autocomplete="off" 
+  onsubmit="event.preventDefault(); document.getElementById('contact-success').style.display='block'; this.reset();">
+  <input type="text" name="name" placeholder="Ihr Name*" required>
+  <input type="email" name="email" placeholder="Ihre E-Mail*" required>
+  <textarea name="message" rows="5" placeholder="Ihre Nachricht*" required></textarea>
+  <button type="submit">Absenden</button>
+  <div id="contact-success" style="display:none;color:#0a8f08;margin-top:1rem;">Danke! Ihre Nachricht wurde gesendet.</div>
+</form>
+    <p style="margin-top:2rem; font-size:1rem; color:#888;">Oder kontaktieren Sie uns per E-Mail: <a href=\"mailto:info@roeth-datensysteme.de\">info@roeth-datensysteme.de</a></p>
+  </div>
+</section>
+
+  <!-- Karriere -->
+  <section class="screen-section" id="karriere">
+    <div class="big-card">
+      <h2>Karriere</h2>
+		<p>
+			Sie möchten in einem innovativen Umfeld arbeiten und mit uns die digitale Zukunft gestalten? Dann senden Sie uns Ihre Initiativbewerbung – wir sind immer auf der Suche nach talentierten Fachkräften im Bereich IT, Support und Projektmanagement.<br><br>
+			Bei Röth Datensysteme Wuppertal GmbH erwartet Sie ein modernes Arbeitsumfeld mit flachen Hierarchien, kurzen Entscheidungswegen und einem offenen, wertschätzenden Miteinander. Wir bieten Ihnen individuelle Entwicklungsmöglichkeiten, regelmäßige Weiterbildungen und spannende Projekte für namhafte Kunden aus verschiedensten Branchen.<br><br>
+			Ganz gleich, ob Sie bereits Berufserfahrung mitbringen oder als Berufseinsteiger durchstarten möchten – wir freuen uns auf motivierte Persönlichkeiten, die mit uns gemeinsam neue Wege gehen wollen. Bewerben Sie sich jetzt und werden Sie Teil unseres Teams!
+		</p>
+    </div>
+  </section>
+
+  <!-- Partner -->
+<section class="screen-section" id="partner">
+  <div class="big-card partner-big-card">
+    <h2 class="partner-title">Unsere Partner</h2>
+    <div class="partner-cards">
+      <div class="partner-card">
+        <h3>NetSecure GmbH</h3>
+        <p>Spezialist für Netzwerksicherheit und Schutz sensibler Unternehmensdaten.</p>
+      </div>
+      <div class="partner-card">
+        <h3>CloudOne AG</h3>
+        <p>Ihr zuverlässiger Partner für Cloud-Hosting, Infrastruktur und skalierbare IT-Lösungen.</p>
+      </div>
+      <div class="partner-card">
+        <h3>NextVision Software</h3>
+        <p>Individuelle Softwarelösungen für effiziente Geschäftsprozesse und Digitalisierung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Support -->
+  <section class="screen-section" id="support">
+<div class="big-card">
+  <h2>Support</h2>
+  <p>
+    Unsere Support-Teams stehen Ihnen werktags zwischen 8:00–18:00 Uhr zur Verfügung. Ob Fernwartung, Troubleshooting oder Hardwareprobleme – wir helfen Ihnen schnell und zuverlässig.
+  </p>
+  <p>
+    Mit unserem erfahrenen IT-Support erhalten Sie kompetente Hilfe bei technischen Störungen, Software-Fragen oder der Systemwartung – per Telefon, E-Mail oder Remote-Zugriff. Wir setzen auf schnelle Reaktionszeiten und eine transparente Kommunikation, damit Sie sich jederzeit auf Ihre IT-Infrastruktur verlassen können.
+  </p>
+  <p>
+    Durch regelmäßige Schulungen halten wir unser Service-Team stets auf dem neuesten Stand der Technik und sorgen dafür, dass Ihre Systeme sicher, stabil und leistungsfähig bleiben. Ihre Zufriedenheit und ein reibungsloser Ablauf stehen für uns an erster Stelle.
+  </p>
+</div>
+  </section>
+</main>
+
+
+
+  <footer>
+    <p>&copy; 2025 Röth Datensysteme Wuppertal GmbH</p>
+    <p><a href="impressum.html" style="color:white; text-decoration:underline">Impressum</a> | <a href="datenschutz.html" style="color:white; text-decoration:underline">Datenschutz</a></p>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    Diese Website verwendet Cookies, um Ihnen das bestmögliche Erlebnis zu bieten.
+    <button onclick="document.getElementById('cookieBanner').style.display='none'">Verstanden</button>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+// Секция появляется при скролле
+const sections = document.querySelectorAll('.screen-section');
+const secObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(sec => secObserver.observe(sec));
+
+  </script>
+</body>
+</html>

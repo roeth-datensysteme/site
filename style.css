@@ -1,0 +1,440 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f6f8;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: #0a3d62;
+  color: white;
+  padding: 0,3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 5rem;
+}
+.logo img {
+  height: 150px;
+  margin-right: 0.75rem;
+}
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #7ed6df;
+}
+
+/* HERO */
+.hero {
+  background: url('images/bg2.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  animation: fadeIn 1s ease-in;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1s 0.2s forwards;
+}
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 1s 0.6s forwards;
+}
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MAIN/SECTIONS */
+main {
+  padding: 0;
+  margin: 0;
+}
+.screen-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Фон секции-картинка */
+.screen-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  filter: brightness(0.55) blur(2px); /* затемнить + размытие */
+  transition: background-image 0.7s;
+}
+/* Картинки секций — подставь нужные пути! */
+#leistungen::before   { background-image: url('images/bg_leistungen.jpg'); }
+#unternehmen::before  { background-image: url('images/bg_unternehmen.jpg'); }
+#kontakt::before      { background-image: url('images/bg_kontakt.jpg'); }
+#karriere::before     { background-image: url('images/bg_karriere.jpg'); }
+#partner::before      { background-image: url('images/bg_partner.jpg'); }
+#support::before      { background-image: url('images/bg_support.jpg'); }
+
+.partner-title {
+  text-align: center;
+  width: 100%;
+  margin: 0 0 2.2rem 0;
+  color: #0a3d62;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+#partner.screen-section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* чтобы контент начинался сверху */
+  padding-top: 5vh;            /* немного отступа сверху */
+  min-height: 100vh;
+}
+
+/* Карточка-контент в секции */
+.big-card {
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 8px 44px rgba(0,0,0,0.12);
+  padding: 4.5rem 3.5rem;
+  max-width: 900px;
+  width: 98%;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(70px) scale(0.98);
+  transition: all 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+  will-change: opacity, transform;
+  position: relative;
+  z-index: 2;
+  font-size: 1.35rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.screen-section.visible .big-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.big-card h2 {
+  margin-top: 0;
+  margin-bottom: 2.2rem;
+  color: #0a3d62;
+  font-size: 2.7rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.big-card p,
+.big-card ul {
+  color: #444;
+  font-size: 1.35rem;
+  line-height: 1.8;
+}
+
+.big-card ul {
+  padding-left: 1.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.big-card li {
+  margin-bottom: 0.7em;
+  font-size: 1.2em;
+}
+
+/* Для формы внутри big-card, чтобы она выглядела солидно */
+.big-card form input,
+.big-card form textarea {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 950px) {
+  .big-card {
+    padding: 2.2rem 0.8rem;
+    max-width: 99vw;
+    font-size: 1.1rem;
+  }
+  .big-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.1rem;
+  }
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #0a3d62;
+  color: white;
+}
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* COOKIE-BANNER */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+.cookie-banner button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Анимация появления секций */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+  .logo {
+    margin-left: 1rem;
+  }
+  .logo img {
+    height: 80px;
+  }
+  .big-card {
+    padding: 1.2rem 0.7rem;
+    max-width: 97vw;
+  }
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin: 2.5rem 0 0 0;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem 1.2rem;
+  border: 1.5px solid #dde4ea;
+  border-radius: 8px;
+  font-size: 1.07rem;
+  outline: none;
+  transition: border 0.2s;
+  resize: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid #0a3d62;
+  background: #f3faff;
+}
+.contact-form button {
+  background: #0a3d62;
+  color: #fff;
+  padding: 1rem 2.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.2s;
+}
+.contact-form button:hover {
+  background: #1452a1;
+  transform: translateY(-2px) scale(1.03);
+}
+body.impressum-bg {
+  background: url('images/bg_impressum.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+}
+body.datenschutz-bg {
+  background: url('images/bg_datenschutz.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+}
+#datenschutz.screen-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/bg_datenschutz.jpg') no-repeat center center/cover;
+  filter: brightness(0.6) blur(1.5px);
+  z-index: 1;
+}
+#datenschutz .big-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.97);
+}
+.partner-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2.2rem;
+}
+.partner-card {
+  background: #f5f8fc;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(10,61,98,0.07);
+  padding: 2rem 1.2rem 1.6rem 1.2rem;
+  max-width: 260px;
+  min-width: 200px;
+  flex: 1 1 220px;
+  text-align: left;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #e3ebf3;
+}
+.partner-cards, .partner-card {
+  position: relative;
+  z-index: 2;
+}
+/* ==================== PARTNER SECTION ==================== */
+#partner.screen-section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 5vh;
+  min-height: 100vh;
+}
+
+.partner-big-card {
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 8px 44px rgba(0,0,0,0.12);
+  padding: 3.5rem 2.2rem 3rem 2.2rem;
+  max-width: 1150px;
+  width: 97vw;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partner-title {
+  text-align: center;
+  width: 100%;
+  margin: 0 0 2.2rem 0;
+  color: #0a3d62;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+.partner-cards {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.partner-card {
+  background: #f5f8fc;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(10,61,98,0.07);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  flex: 1 1 320px;
+  max-width: 320px;
+  min-width: 260px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #e3ebf3;
+  height: 250px;
+}
+
+.partner-card h3 {
+  margin: 0 0 1.2rem 0;
+  color: #0a3d62;
+  font-size: 1.23rem;
+  font-weight: bold;
+}
+
+.partner-card p {
+  margin: 0;
+  color: #34495e;
+  font-size: 1.07rem;
+}
+
+.partner-card:hover {
+  box-shadow: 0 8px 32px rgba(10,61,98,0.16);
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* ==================== Адаптив ==================== */
+@media (max-width: 1100px) {
+  .partner-big-card { padding: 2rem 1rem 2rem 1rem; }
+  .partner-cards { gap: 1.2rem; }
+  .partner-card { min-width: 200px; max-width: 99vw; height: auto; }
+}
+@media (max-width: 700px) {
+  .partner-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .partner-card {
+    min-width: 90vw;
+    width: 99vw;
+    max-width: 99vw;
+    padding: 1.6rem 1rem 1.6rem 1rem;
+  }
+}
+
+/* ==================== End PARTNER SECTION ==================== */
